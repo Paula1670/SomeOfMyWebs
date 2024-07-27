@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org en">
+<head>
+    <meta charset="text/html; UTF-8">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Edit product form</title>
+</head>
+<body>
+<header th:replace="~{fragment/header::myheader}"></header>
+
+<h1>Edit product</h1>
+
+<form action="#" th:action="@{/product/edit}" th:object="${product}" method="post">
+    <p>Id: <input type="text" th:field="*{id}"/></p>
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Category: <input type="text" th:field="*{category}"/></p>
+    <p>Price: <input type="number" step="0.01" th:field="*{price}"/></p>
+    <p>Description: <input type="text" th:field="*{description}"/></p>
+    <p><input type="submit" value="Modify"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

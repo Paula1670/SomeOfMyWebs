@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org en">
+<head>
+    <meta charset="text/html; UTF-8">
+    <!--  <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Products list</title>
+</head>
+<body>
+<header th:replace="~{fragment/header::myheader}"></header>
+
+<h1>About me</h1>
+
+<div class="content">
+    <table class="display table table-bordered" style="width:800px">
+        <thead class="text-center">
+        <tr>
+            <th class="text-left">Name</th>
+            <th class="text-left">Surname</th>
+            <th class="text-left">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="text-right">Boran</td>
+            <td class="text-left">Gobel</td>
+            <td class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at sapien quis tortor
+                rhoncus malesuada. Proin vel neque lorem. Suspendisse in posuere leo, iaculis cursus elit. Suspendisse
+                semper nibh mauris, quis vehicula enim interdum nec. Morbi at volutpat purus, ut semper ante. Donec a
+                urna nec nibh lacinia dignissim ac in diam. Aenean rhoncus eu nisl non vehicula. Curabitur sit amet
+                lectus a ex aliquet egestas vitae vitae arcu. Aenean vitae augue vel lectus venenatis iaculis vitae a
+                erat. Vivamus libero nisl, gravida nec vehicula ac, condimentum in sem. Aenean non dapibus arcu, in
+                tincidunt mi. Donec ipsum neque, facilisis eget lacus faucibus, auctor porta nibh. Quisque et sem
+                dapibus, dictum ipsum sit amet, mattis ipsum. Maecenas non velit eu odio laoreet pretium. Morbi quis sem
+                nibh.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p th:text="${serverTime}"></p>
+</body>
+</html>

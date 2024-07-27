@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org en">
+<head>
+    <meta charset="text/html; UTF-8">
+    <!--  <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Products list</title>
+</head>
+<body>
+<header th:replace="~{fragment/header::myheader}"></header>
+
+<h1>Products list</h1>
+
+<div class="content">
+    <table class="display table table-bordered" style="width:800px">
+        <thead class="text-center">
+        <tr>
+            <th class="text-right">Id</th>
+            <th class="text-left">Name</th>
+            <th class="text-left">Category</th>
+            <th class="text-left">Price</th>
+            <th class="text-left">Description</th>
+            <th class="text-center" colspan="3">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${productList}">
+            <td class="text-right" th:text="${product.getId()}"></td>
+            <td class="text-left" th:text="${product.getName()}"></td>
+            <td class="text-left" th:text="${product.getCategory()}"></td>
+            <td class="text-left" th:text="${product.getPrice()}"></td>
+            <td class="text-left" th:text="${product.getDescription()}"></td>
+            <td><a class="btn btn-primary" th:href="@{/product/details(id=${product.getId()})}">details</a></td>
+            <td><a class="btn btn-primary" th:href="@{/product/edit(id=${product.getId()})}">edit</a>
+            </td>
+            <td><a class="btn btn-danger" th:href="@{/product/remove(id=${product.getId()})}">remove</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${#lists.isEmpty(productList)}">
+        <h2>Empty list of products!</h2>
+    </div>
+</div>
+<p th:text="${serverTime}"></p>
+</body>
+</html>
